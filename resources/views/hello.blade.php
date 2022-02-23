@@ -29,7 +29,7 @@
             @foreach ($data as $dt)
             <tr>
                 <td>
-                    <a href="#" class="btn btn-warning">Edit</a>
+                    <a href="{{ route('move_edit_page', $dt->id) }}" class="btn btn-warning">Edit</a>
                     <a href="{{ route('deleteData', $dt->id) }}" class="btn btn-danger">Delete</a>
                 </td>
                 <td>{{$no_urut}}</td>

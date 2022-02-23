@@ -21,5 +21,9 @@ Route::get('/', function () {
 
 Route::get('/home', 'HelloController@home')->name('back');
 Route::get('/home/delete/{id}', 'HelloController@deleteData')->name('deleteData');
+
 Route::get('/home/insert', 'HelloController@move_insert_page')->name('move_insert_page');
+Route::get('/home/edit/{id}', 'HelloController@move_edit_page')->name('move_edit_page');
+
 Route::post('/home/insert', 'HelloController@insertData')->name('insertData');
+Route::post('/home/edit', 'HelloController@editData')->name('editData');

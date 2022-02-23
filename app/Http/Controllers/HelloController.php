@@ -35,4 +35,22 @@ class HelloController extends Controller
             'insert'
         );
     }
+
+    public function move_edit_page($id)
+    {
+        $row = DB::table('books')->where('id', $id)->get();
+
+        foreach ($row as $rw) {
+            $title = $rw->titile;
+            $type = $rw->type;
+        }
+
+        return view(
+            'edit', [
+                'id' => $id,
+                'title' => $title,
+                'type' => $type
+            ]
+        );
+    }
 }
