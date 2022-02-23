@@ -46,7 +46,8 @@
     <div class="container mt-3">
         <h1>Edit Books</h1>
 
-        <form action="{{ route('editData') }}" method="post" class="form">
+        <form action="{{ route('editData', ['id' => $id]) }}" method="post" class="form">
+            @csrf
             <div class="form-group">
                 <label class="form-label" for="title">Title</label>
                 <input class="form-control" type="text" name="title" id="title" value="{{$title}}">

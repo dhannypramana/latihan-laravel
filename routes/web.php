@@ -26,4 +26,4 @@ Route::get('/home/insert', 'HelloController@move_insert_page')->name('move_inser
 Route::get('/home/edit/{id}', 'HelloController@move_edit_page')->name('move_edit_page');
 
 Route::post('/home/insert', 'HelloController@insertData')->name('insertData');
-Route::post('/home/edit', 'HelloController@editData')->name('editData');
+Route::post('/home/edit/{id}', 'HelloController@editData')->name('editData');

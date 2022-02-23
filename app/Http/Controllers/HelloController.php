@@ -29,6 +29,18 @@ class HelloController extends Controller
         return redirect('/home/');
     }
 
+    public function editData(Request $dataRegister)
+    {
+        DB::table('books')
+            ->where('id', $dataRegister->id)
+            ->update([
+                'titile' => $dataRegister->title,
+                'type' => $dataRegister->type
+            ]);
+
+        return redirect('/home/');
+    }
+
     public function move_insert_page()
     {
         return view(
