@@ -50,11 +50,13 @@ Route::get('/posts', function () {
     $blog_post = [
         [
             'title' => "Judul Post Pertama",
+            'slug' => "judul-post-pertama",
             'author' => "Dhanny Adhi Pramana",
             'body' => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe iste quis quia perferendis eaque eveniet, expedita excepturi repudiandae, magnam rerum, corporis quae. Veritatis architecto necessitatibus doloremque? A quidem nam, nulla facilis labore nemo. Esse ducimus aperiam ut minima ad quae dolor totam repellat. Tempora delectus magnam laboriosam quo, aspernatur architecto? Eveniet vel itaque recusandae omnis reiciendis. Fugiat, voluptatibus nobis maiores necessitatibus nisi eos voluptas ipsa, possimus consectetur amet facere eligendi aspernatur ea quibusdam, aut ex enim laudantium. Praesentium, quo ratione!"
         ],
         [
             'title' => "Judul Post Kedua",
+            'slug' => "judul-post-kedua",
             'author' => "Doddy Ferdiansyah",
             'body' => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe iste quis quia perferendis eaque eveniet, expedita excepturi repudiandae, magnam rerum, corporis quae. Veritatis architecto necessitatibus doloremque? A quidem nam, nulla facilis labore nemo. Esse ducimus aperiam ut minima ad quae dolor totam repellat. Tempora delectus magnam laboriosam quo, aspernatur architecto? Eveniet vel itaque recusandae omnis reiciendis. Fugiat, voluptatibus nobis maiores necessitatibus nisi eos voluptas ipsa, possimus consectetur amet facere eligendi aspernatur ea quibusdam, aut ex enim laudantium. Praesentium, quo ratione!"
         ]
@@ -63,6 +65,37 @@ Route::get('/posts', function () {
     return view('posts', [
         'title' => "Posts",
         'posts' => $blog_post
+    ]);
+});
+
+Route::get('/posts/{slug}', function ($slug) {
+    $blog_post = [
+        [
+            'title' => "Judul Post Pertama",
+            'slug' => "judul-post-pertama",
+            'author' => "Dhanny Adhi Pramana",
+            'body' => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe iste quis quia perferendis eaque eveniet, expedita excepturi repudiandae, magnam rerum, corporis quae. Veritatis architecto necessitatibus doloremque? A quidem nam, nulla facilis labore nemo. Esse ducimus aperiam ut minima ad quae dolor totam repellat. Tempora delectus magnam laboriosam quo, aspernatur architecto? Eveniet vel itaque recusandae omnis reiciendis. Fugiat, voluptatibus nobis maiores necessitatibus nisi eos voluptas ipsa, possimus consectetur amet facere eligendi aspernatur ea quibusdam, aut ex enim laudantium. Praesentium, quo ratione!"
+        ],
+        [
+            'title' => "Judul Post Kedua",
+            'slug' => "judul-post-kedua",
+            'author' => "Doddy Ferdiansyah",
+            'body' => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe iste quis quia perferendis eaque eveniet, expedita excepturi repudiandae, magnam rerum, corporis quae. Veritatis architecto necessitatibus doloremque? A quidem nam, nulla facilis labore nemo. Esse ducimus aperiam ut minima ad quae dolor totam repellat. Tempora delectus magnam laboriosam quo, aspernatur architecto? Eveniet vel itaque recusandae omnis reiciendis. Fugiat, voluptatibus nobis maiores necessitatibus nisi eos voluptas ipsa, possimus consectetur amet facere eligendi aspernatur ea quibusdam, aut ex enim laudantium. Praesentium, quo ratione!"
+        ]
+    ];
+
+    $newPost = [];
+
+    foreach ($blog_post as $post) {
+        if ($post["slug"] == $slug) {
+            $newPost = $post;
+            break;
+        }
+    }
+
+    return view('post', [
+        'title' => "Posts",
+        'post' => $post
     ]);
 });
 // Simple Blog
