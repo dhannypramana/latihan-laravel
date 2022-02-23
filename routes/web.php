@@ -47,8 +47,22 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
+    $blog_post = [
+        [
+            'title' => "Judul Post Pertama",
+            'author' => "Dhanny Adhi Pramana",
+            'body' => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe iste quis quia perferendis eaque eveniet, expedita excepturi repudiandae, magnam rerum, corporis quae. Veritatis architecto necessitatibus doloremque? A quidem nam, nulla facilis labore nemo. Esse ducimus aperiam ut minima ad quae dolor totam repellat. Tempora delectus magnam laboriosam quo, aspernatur architecto? Eveniet vel itaque recusandae omnis reiciendis. Fugiat, voluptatibus nobis maiores necessitatibus nisi eos voluptas ipsa, possimus consectetur amet facere eligendi aspernatur ea quibusdam, aut ex enim laudantium. Praesentium, quo ratione!"
+        ],
+        [
+            'title' => "Judul Post Kedua",
+            'author' => "Doddy Ferdiansyah",
+            'body' => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe iste quis quia perferendis eaque eveniet, expedita excepturi repudiandae, magnam rerum, corporis quae. Veritatis architecto necessitatibus doloremque? A quidem nam, nulla facilis labore nemo. Esse ducimus aperiam ut minima ad quae dolor totam repellat. Tempora delectus magnam laboriosam quo, aspernatur architecto? Eveniet vel itaque recusandae omnis reiciendis. Fugiat, voluptatibus nobis maiores necessitatibus nisi eos voluptas ipsa, possimus consectetur amet facere eligendi aspernatur ea quibusdam, aut ex enim laudantium. Praesentium, quo ratione!"
+        ]
+    ];
+
     return view('posts', [
-        'title' => "Posts"
+        'title' => "Posts",
+        'posts' => $blog_post
     ]);
 });
 // Simple Blog
