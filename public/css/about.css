@@ -1,0 +1,5 @@
+.img-rounded {
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: lightcyan;
+}

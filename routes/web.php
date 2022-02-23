@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 |
 */
 
+// CRUD Lirary
 Route::get('/', function () {
     return view('login');
 });
@@ -27,3 +28,22 @@ Route::get('/home/edit/{id}', 'HelloController@move_edit_page')->name('move_edit
 
 Route::post('/home/insert', 'HelloController@insertData')->name('insertData');
 Route::post('/home/edit/{id}', 'HelloController@editData')->name('editData');
+// CRUD Lirary
+
+// Simple Blog
+Route::get('/main', function () {
+    return view('main');
+});
+
+Route::get('/about', function () {
+    return view('about', [
+        'name' => "Dhanny Adhi Pramana",
+        'email' => "p.dhannypramana@gmail.com",
+        'image' => "pp-trans.png"
+    ]);
+});
+
+Route::get('/posts', function () {
+    return view('posts');
+});
+// Simple Blog
