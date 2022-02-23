@@ -41,6 +41,8 @@
             @endphp
             @endforeach
         </table>
+
+        <a href="{{ route('move_insert_page') }}" class="btn btn-primary">Add Data</a>
     </div>
 </body>
 </html>

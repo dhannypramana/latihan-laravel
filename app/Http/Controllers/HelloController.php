@@ -20,6 +20,19 @@ class HelloController extends Controller
     {
         DB::table('books')->delete($id);
         
-        return redirect('/home');
+        return redirect('/home/');
+    }
+
+    public function insertData(Request $dataRegister)
+    {
+        DB::insert('insert into books (titile, type) values (?, ?)', [$dataRegister->title, $dataRegister->type]);
+        return redirect('/home/');
+    }
+
+    public function move_insert_page()
+    {
+        return view(
+            'insert'
+        );
     }
 }

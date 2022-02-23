@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use function League\CommonMark\Reference\get;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/home', 'HelloController@home');
-
+Route::get('/home', 'HelloController@home')->name('back');
 Route::get('/home/delete/{id}', 'HelloController@deleteData')->name('deleteData');
+Route::get('/home/insert', 'HelloController@move_insert_page')->name('move_insert_page');
+Route::post('/home/insert', 'HelloController@insertData')->name('insertData');
