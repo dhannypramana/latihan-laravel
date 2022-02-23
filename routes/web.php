@@ -32,11 +32,14 @@ Route::post('/home/edit/{id}', 'HelloController@editData')->name('editData');
 
 // Simple Blog
 Route::get('/main', function () {
-    return view('main');
+    return view('main', [
+        'title' => "Home"
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
+        'title' => "About",
         'name' => "Dhanny Adhi Pramana",
         'email' => "p.dhannypramana@gmail.com",
         'image' => "pp-trans.png"
@@ -44,6 +47,8 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts');
+    return view('posts', [
+        'title' => "Posts"
+    ]);
 });
 // Simple Blog
